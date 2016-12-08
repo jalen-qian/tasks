@@ -121,7 +121,7 @@ include "ArrayTrans.php";
 $transform = new ArrayTransform();
 $data = $transform -> transformOne($data);
 echo "第一题：<br>";
-print_r ($data);
+print_r ($data); 
 
 
 $data2 = $transform -> transformTwo($data2);

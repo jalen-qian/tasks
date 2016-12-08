@@ -53,4 +53,44 @@ Array
         )
 
 )
+
+
+第二题：
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [hotelName] => 长隆酒店
+            [dateList] => Array
+                (
+                    [0] => Array
+                        (
+                            [date] => 2016-12-06
+                            [isOpen] => 1
+                        )
+
+                    [1] => Array
+                        (
+                            [date] => 2016-12-07
+                            [isOpen] => 0
+                        )
+
+                    [2] => Array
+                        (
+                            [date] => 2016-12-08
+                            [isOpen] => 1
+                        )
+
+                    [3] => Array
+                        (
+                            [date] => 2016-12-09
+                            [isOpen] => 0
+                        )
+
+                )
+
+        )
+
+)
 </pre>
