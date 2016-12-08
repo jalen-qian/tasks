@@ -1,0 +1,56 @@
+##数组转换练习作业
+
+
+
+##程序运行的输出
+
+<pre>
+﻿﻿第一题：
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [hotelName] => 长隆酒店
+            [acList] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 1
+                            [imageUrl] => http://www.baidu.com
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2
+                            [imageUrl] => http://www.jd.com
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [hotelName] => 万达酒店
+            [acList] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 1
+                            [imageUrl] => http://www.taobao.com
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2
+                            [imageUrl] => http://www.wangyi.com
+                        )
+
+                )
+
+        )
+
+)
+</pre>
