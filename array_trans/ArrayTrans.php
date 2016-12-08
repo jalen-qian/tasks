@@ -1,6 +1,6 @@
 ﻿<?php
 /**
-* 数组转换练习实现类 
+* 数组转换练习实现类
 */
 class ArrayTransform{
 	/**
