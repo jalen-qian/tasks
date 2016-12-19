@@ -1,0 +1,83 @@
+//创建用户表
+CREATE TABLE IF NOT EXISTS user(
+    id INT PRIMARY KEY AUTO_INCREMENT COMMENT '管理员id',
+    name VARCHAR(30) NOT NULL DEFAULT '',
+    password VARCHAR(80) NOT NULL DEFAULT ''
+);
+//产品表
+CREATE TABLE IF NOT EXISTS products(
+id int PRIMARY KEY AUTO_INCREMENT COMMENT '产品id',
+type_id INT NOT NULL DEFAULT '0' COMMENT '产品类别id',
+user_id INT NOT NULL DEFAULT '0' COMMENT '添加人id',
+name VARCHAR(30) NOT NULL DEFAULT '' COMMENT '产品名称',
+desn TEXT NOT NULL COMMENT '产品描述',
+pic_path VARCHAR(255) NOT NULL DEFAULT '' COMMENT '图片路径',
+add_time INT NOT NULL DEFAULT 0 COMMENT '添加时间');
+
+//产品类别表
+CREATE TABLE IF NOT EXISTS prdu_type(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '产品类别id',
+name VARCHAR(30) NOT NULL DEFAULT '' COMMENT '产品类别名称');
+
+//资讯表(informations)
+CREATE TABLE IF NOT EXISTS informations(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '资讯id',
+pub_uid INT NOT NULL DEFAULT 0 COMMENT '发布人id',
+title VARCHAR(80) NOT NULL DEFAULT '' COMMENT '资讯标题',
+content TEXT NOT NULL COMMENT '资讯内容',
+pub_time INT NOT NULL DEFAULT 0 COMMENT '发布时间');
+
+//友情链接表
+CREATE TABLE IF NOT EXISTS blogrolls(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '友情链接id',
+page_id INT NOT NULL DEFAULT 0 COMMENT '页面id',
+name VARCHAR(30) NOT NULL DEFAULT '' COMMENT '友情链接名称',
+content TEXT NOT NULL COMMENT '友情链接内容');
+
+//新闻表(news)
+CREATE TABLE IF NOT EXISTS news(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '新闻id',
+pub_uid INT NOT NULL DEFAULT 0 COMMENT '发布人id',
+title VARCHAR(80) NOT NULL DEFAULT '' COMMENT '新闻标题',
+content TEXT NOT NULL COMMENT '新闻内容',
+pub_time INT NOT NULL DEFAULT 0 COMMENT '发布时间');
+
+//留言表(leave_msgs)
+CREATE TABLE IF NOT EXISTS leave_mgs(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '留言id',
+nickname VARCHAR(30) NOT NULL DEFAULT '' COMMENT '昵称',
+content TEXT NOT NULL COMMENT '留言内容',
+pub_time INT NOT NULL DEFAULT 0 COMMENT '发布时间');
+
+//公司信息表
+CREATE TABLE IF NOT EXISTS company_info(
+id  INT PRIMARY KEY AUTO_INCREMENT  COMMENT  '公司信息id',
+cpn_name  VARCHAR(255) NOT NULL DEFAULT ''  COMMENT '公司名称',
+cpn_intro TEXT  NOT  NULL COMMENT '公司简介',
+addr  VARCHAR(30)  NOT  NULL DEFAULT ''  COMMENT '地址',
+contacts VARCHAR(30)  NOT NULL DEFAULT ''  COMMENT '联系人姓名',
+mobile varchar(11)  	NOT NULL DEFAULT ''	 COMMENT '移动电话',
+fixed_tel 	varchar(12) 	NOT NULL DEFAULT '' 	COMMENT '固定电话',
+fax	 varchar(12)	 NOT NULL DEFAULT ''	 COMMENT '传真',
+copyright_id   int  	NOT NULL DEFAULT  0	  COMMENT '版权id',
+icp_no   varchar(30)   	NOT NULL DEFAULT '' 	COMMENT 'ICP备案号'
+);
+
+//版权信息表
+CREATE TABLE IF NOT EXISTS copyright(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '版权信息id',
+cpn_id INT NOT NULL DEFAULT 0 COMMENT '版权所有人（公司）id',
+copyright_no VARCHAR(30) NOT NULL  DEFAULT '' COMMENT '版权号',
+program_version VARCHAR(80) NOT NULL DEFAULT '' COMMENT '程序版本',
+tech_spt VARCHAR(80) NOT NULL DEFAULT '' COMMENT '技术支持'
+);
+
+//"联系我们"表(contact_us)
+
+CREATE TABLE IF NOT EXISTS contact_us(
+id INT PRIMARY KEY AUTO_INCREMENT COMMENT '联系我们记录id',
+user_id INT NOT NULL DEFAULT 0 COMMENT '用户id',
+content TEXT NOT NULL COMMENT '内容',
+add_time INT NOT NULL DEFAULT 0  COMMENT '添加时间'
+);
+
