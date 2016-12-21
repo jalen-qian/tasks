@@ -13,13 +13,11 @@ class DeleteDir{
 		if (is_dir($dir)) {
 			if ($dh = opendir($dir)) {
 				while (($file = readdir($dh)) !== false) {
-					//echo $file."<br>";
 					if ((is_dir($dir.'/'.$file)) && $file != '.' && $file != '..') {
 						DeleteDir::delete($dir.'/'.$file.'/');
 					} else {
 						if ($file != '.' && $file != '..') {
 							unlink($dir.'/'.$file);
-							//DeleteDir::delete($dir.'/'.$file.'/');
 						}
 					}
 				}
