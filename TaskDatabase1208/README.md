@@ -225,8 +225,8 @@ WHERE userNo in (
 * 5.使用标准SQL嵌套语句查询**不选修课程编号为'C5'**的学员姓名和所属单位
 ```sql
 SELECT userName,currentUnit FROM user
-WHERE userNo in (
-   SELECT userNo FROM point WHERE courseNo != 'C5'
+WHERE userNo not in (
+   SELECT userNo FROM point WHERE courseNo = 'C5'
 );
 ```
 查询结果如下：
@@ -243,8 +243,16 @@ WHERE userNo in (
 ```sql
 SELECT userName,currentUnit FROM user WHERE NOT EXISTS (
     SELECT * FROM course WHERE NOT EXISTS(
-    SELECT * FROM point WHERE userNo = user.userNo AND courseNo = course.courseNo);
+    SELECT * FROM point WHERE userNo = user.userNo AND courseNo = course.courseNo));
 ```
+查询结果：
+<pre>
++----------+-------------+
+| userName | currentUnit |
++----------+-------------+
+| 小明      | 技术部      |
++----------+-------------+
+</pre>
 
 * 7.选修了课程的学员人数
 ```sql
